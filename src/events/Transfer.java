@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
  * Transfer - Implementation of sealed interface
  * 
  * Demonstrates:
- * ✅ final class implementing sealed interface
- * ✅ Additional business logic
+ * ** final class implementing sealed interface
+ * ** Additional business logic
  */
 public final record Transfer(
     LocalDateTime timestamp,

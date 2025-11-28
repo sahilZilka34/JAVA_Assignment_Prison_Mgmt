@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter;
  * Assignable - Interface for entities that can be assigned to cells
  * 
  * Demonstrates:
- * ✅ Interface (contract that classes must implement)
- * ✅ Abstract methods (no implementation)
- * ✅ DEFAULT methods (Java 8+) - has implementation, can be overridden
- * ✅ STATIC methods (Java 8+) - utility methods, cannot be overridden
- * ✅ PRIVATE methods (Java 9+) - helper methods for default/static methods
+ * ** Interface (contract that classes must implement)
+ * ** Abstract methods (no implementation)
+ * ** DEFAULT methods (Java 8+) - has implementation, can be overridden
+ * ** STATIC methods (Java 8+) - utility methods, cannot be overridden
+ * ** PRIVATE methods (Java 9+) - helper methods for default/static methods
  * 
  * Real-world usage:
  * Any entity that can be assigned to a prison cell implements this interface:
@@ -328,30 +328,30 @@ public interface Assignable {
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ Interface (contract for classes)
-// ✅ Abstract methods (must be implemented)
-// ✅ DEFAULT methods (can be overridden) - Java 8
+// ** Interface (contract for classes)
+// ** Abstract methods (must be implemented)
+// ** DEFAULT methods (can be overridden) - Java 8
 //    - getDisplayName()
 //    - generateAssignmentSummary()
 //    - isAssignmentSafe()
 //    - getAssignmentPriority()
 //    - requiresSpecialHandling()
-// ✅ STATIC methods (utility methods) - Java 8
+// ** STATIC methods (utility methods) - Java 8
 //    - isExtremeSecurityLevel()
 //    - calculateRequiredCapacity()
 //    - getRecommendedCellType()
 //    - formatReportHeader()
 //    - validateAllAssignments()
-// ✅ PRIVATE methods (helper methods) - Java 9
+// ** PRIVATE methods (helper methods) - Java 9
 //    - formatTimestamp()
 //    - validateCellCompatibility()
 //    - needsIsolation()
-// ✅ PRIVATE STATIC methods - Java 9
+// ** PRIVATE STATIC methods - Java 9
 //    - isValidSecurityLevel()
 //    - isValidForLevel()
 //    - formatCenteredText()
-// ✅ VARARGS in interface (calculateRequiredCapacity)
-// ✅ StringBuilder usage
-// ✅ Date API (LocalDateTime, DateTimeFormatter)
-// ✅ String methods (format, repeat)
-// ✅ Switch statement
+// ** VARARGS in interface (calculateRequiredCapacity)
+// ** StringBuilder usage
+// ** Date API (LocalDateTime, DateTimeFormatter)
+// ** String methods (format, repeat)
+// ** Switch statement

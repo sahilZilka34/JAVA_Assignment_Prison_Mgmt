@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
  * PrisonEvent - SEALED INTERFACE (Java 17+)
  * 
  * Demonstrates:
- * ✅ SEALED interface (advanced requirement!)
- * ✅ Restricted inheritance hierarchy
- * ✅ Pattern matching with sealed types
+ * ** SEALED interface (advanced requirement!)
+ * ** Restricted inheritance hierarchy
+ * ** Pattern matching with sealed types
  */
 public sealed interface PrisonEvent permits Admission, Release, Transfer {
     

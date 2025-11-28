@@ -9,12 +9,12 @@ import java.time.LocalDate;
  * Prisoner - Represents an inmate (Complete Version)
  * 
  * Demonstrates:
- * ✅ Inheritance (extends Person)
- * ✅ Interface implementation (implements Assignable)
- * ✅ super() - calling parent constructor
- * ✅ super. - accessing parent methods/fields
- * ✅ Method overriding (toString, isValidId)
- * ✅ Polymorphism (can be treated as Person OR Assignable)
+ * ** Inheritance (extends Person)
+ * ** Interface implementation (implements Assignable)
+ * ** super() - calling parent constructor
+ * ** super. - accessing parent methods/fields
+ * ** Method overriding (toString, isValidId)
+ * ** Polymorphism (can be treated as Person OR Assignable)
  */
 public class Prisoner extends Person implements Assignable {
     

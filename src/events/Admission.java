@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
  * Admission - Implementation of sealed interface
  * 
  * Demonstrates:
- * ✅ final class (implements sealed interface)
- * ✅ Record implementing interface
+ * ** final class (implements sealed interface)
+ * ** Record implementing interface
  */
 public final record Admission(
     LocalDateTime timestamp,

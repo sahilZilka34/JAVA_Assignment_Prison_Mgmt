@@ -8,10 +8,10 @@ import java.time.format.DateTimeFormatter;
  * IncidentReport - Record type for incident documentation
  * 
  * Demonstrates:
- * ✅ RECORD type with multiple fields
- * ✅ Record with enum field
- * ✅ Compact constructor with complex validation
- * ✅ Custom methods in records
+ * ** RECORD type with multiple fields
+ * ** Record with enum field
+ * ** Compact constructor with complex validation
+ * ** Custom methods in records
  */
 public record IncidentReport(
     String reportId,
@@ -232,17 +232,17 @@ public record IncidentReport(
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ RECORD type
-// ✅ Record with enum field (SecurityLevel)
-// ✅ Record with array field (String[])
-// ✅ Compact constructor with validation
-// ✅ DEFENSIVE COPYING in constructor and accessor
-// ✅ Custom accessors (overriding auto-generated)
-// ✅ Custom methods
-// ✅ Static factory methods with VARARGS
-// ✅ StringBuilder for complex strings
-// ✅ Date API (LocalDateTime)
-// ✅ Arrays usage
+// ** RECORD type
+// ** Record with enum field (SecurityLevel)
+// ** Record with array field (String[])
+// ** Compact constructor with validation
+// ** DEFENSIVE COPYING in constructor and accessor
+// ** Custom accessors (overriding auto-generated)
+// ** Custom methods
+// ** Static factory methods with VARARGS
+// ** StringBuilder for complex strings
+// ** Date API (LocalDateTime)
+// ** Arrays usage
 
 // ============================================
 // KEY LEARNING: Records + Mutable Fields

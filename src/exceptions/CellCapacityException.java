@@ -4,9 +4,9 @@ package exceptions;
  * CellCapacityException - UNCHECKED EXCEPTION
  * 
  * Demonstrates:
- * ✅ Unchecked exception (extends RuntimeException)
- * ✅ Custom exception with additional data
- * ✅ Exception with business logic validation
+ * ** Unchecked exception (extends RuntimeException)
+ * ** Custom exception with additional data
+ * ** Exception with business logic validation
  * 
  * CHECKED vs UNCHECKED:
  * 
@@ -195,12 +195,12 @@ public class CellCapacityException extends RuntimeException {
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ UNCHECKED EXCEPTION (extends RuntimeException)
-// ✅ Custom exception class
-// ✅ Multiple constructors (overloading)
-// ✅ super() to call parent constructor
-// ✅ Additional data fields (cellNumber, capacity, attempted)
-// ✅ Overriding getMessage()
-// ✅ Exception chaining (cause parameter)
-// ✅ Business logic in exception (isSevereViolation)
-// ✅ StringBuilder for complex messages
+// ** UNCHECKED EXCEPTION (extends RuntimeException)
+// ** Custom exception class
+// ** Multiple constructors (overloading)
+// ** super() to call parent constructor
+// ** Additional data fields (cellNumber, capacity, attempted)
+// ** Overriding getMessage()
+// ** Exception chaining (cause parameter)
+// ** Business logic in exception (isSevereViolation)
+// ** StringBuilder for complex messages

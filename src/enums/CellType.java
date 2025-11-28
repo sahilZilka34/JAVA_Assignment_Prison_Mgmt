@@ -4,9 +4,9 @@ package enums;
  * CellType - Enum representing different types of prison cells
  * 
  * Demonstrates:
- * ✅ Enum with fields and methods
- * ✅ Enum-to-enum relationship (compatible security levels)
- * ✅ Arrays in enums
+ * ** Enum with fields and methods
+ * ** Enum-to-enum relationship (compatible security levels)
+ * ** Arrays in enums
  */
 public enum CellType {
     // Enum constants with parameters
@@ -176,11 +176,11 @@ public enum CellType {
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ Enum with fields
-// ✅ Enum with constructor
-// ✅ Enum with instance methods
-// ✅ Enum with static methods
-// ✅ Enum-to-enum relationship (CellType with SecurityLevel)
-// ✅ Arrays (CellType[] in getSuitableTypes)
-// ✅ Switch statement
-// ✅ Business logic in enums
+// ** Enum with fields
+// ** Enum with constructor
+// ** Enum with instance methods
+// ** Enum with static methods
+// ** Enum-to-enum relationship (CellType with SecurityLevel)
+// ** Arrays (CellType[] in getSuitableTypes)
+// ** Switch statement
+// ** Business logic in enums

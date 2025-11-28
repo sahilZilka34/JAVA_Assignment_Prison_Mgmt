@@ -13,12 +13,12 @@ import java.util.Comparator;
  * Prison - Manager class for the prison system
  * 
  * Demonstrates:
- * ✅ LAMBDAS with Predicate (ADVANCED!)
- * ✅ METHOD REFERENCES (ADVANCED!)
- * ✅ final/effectively final (ADVANCED!)
- * ✅ CALL-BY-VALUE (ADVANCED!)
- * ✅ ArrayList operations
- * ✅ Functional programming
+ * ** LAMBDAS with Predicate (ADVANCED!)
+ * ** METHOD REFERENCES (ADVANCED!)
+ * ** final/effectively final (ADVANCED!)
+ * ** CALL-BY-VALUE (ADVANCED!)
+ * ** ArrayList operations
+ * ** Functional programming
  */
 public class Prison {
     

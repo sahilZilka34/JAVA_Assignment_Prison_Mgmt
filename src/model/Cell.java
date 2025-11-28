@@ -9,11 +9,11 @@ import java.util.List;
  * Cell - Represents a prison cell that can hold prisoners
  * 
  * Demonstrates:
- * ✅ ArrayList/List usage (LAST FUNDAMENTAL!)
- * ✅ Defensive copying (ADVANCED!)
- * ✅ Varargs
- * ✅ Encapsulation
- * ✅ Business logic
+ * ** ArrayList/List usage (LAST FUNDAMENTAL!)
+ * ** Defensive copying (ADVANCED!)
+ * ** Varargs
+ * ** Encapsulation
+ * ** Business logic
  * 
  * Real-world usage:
  * Manages cell occupancy, capacity, and assignments
@@ -370,14 +370,14 @@ public class Cell {
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ ArrayList/List usage (THE LAST FUNDAMENTAL!)
+// ** ArrayList/List usage (THE LAST FUNDAMENTAL!)
 //    - List<Prisoner> occupants
 //    - ArrayList operations (add, remove, contains, clear, size, etc.)
-// ✅ VARARGS (assignPrisoners method)
-// ✅ DEFENSIVE COPYING (getOccupants method) - ADVANCED!
-// ✅ Encapsulation
-// ✅ Method overloading (constructors)
-// ✅ StringBuilder (generateReport)
-// ✅ String methods
-// ✅ Business logic (capacity checks, validation)
-// ✅ equals/hashCode override
+// ** VARARGS (assignPrisoners method)
+// ** DEFENSIVE COPYING (getOccupants method) - ADVANCED!
+// ** Encapsulation
+// ** Method overloading (constructors)
+// ** StringBuilder (generateReport)
+// ** String methods
+// ** Business logic (capacity checks, validation)
+// ** equals/hashCode override

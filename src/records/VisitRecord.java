@@ -7,10 +7,10 @@ import java.time.format.DateTimeFormatter;
  * VisitRecord - Record type for storing visit information
  * 
  * Demonstrates:
- * ✅ RECORD type (Java 14+, LTS in Java 17)
- * ✅ Immutable data carrier
- * ✅ Auto-generated constructor, getters, equals, hashCode, toString
- * ✅ Compact constructor for validation
+ * ** RECORD type (Java 14+, LTS in Java 17)
+ * ** Immutable data carrier
+ * ** Auto-generated constructor, getters, equals, hashCode, toString
+ * ** Compact constructor for validation
  * 
  * What is a Record?
  * - Special class for holding immutable data
@@ -173,15 +173,15 @@ public record VisitRecord(
 // ============================================
 // KEY RECORD FEATURES DEMONSTRATED:
 // ============================================
-// ✅ RECORD type (Java 14+)
-// ✅ Immutable data (all fields final)
-// ✅ Compact constructor (validation)
-// ✅ Auto-generated: constructor, getters, equals, hashCode, toString
-// ✅ Custom methods (calculateEndTime, isInProgress, etc.)
-// ✅ Overriding auto-generated methods (toString)
-// ✅ Static factory methods
-// ✅ Date API (LocalDateTime)
-// ✅ String formatting
+// ** RECORD type (Java 14+)
+// ** Immutable data (all fields final)
+// ** Compact constructor (validation)
+// ** Auto-generated: constructor, getters, equals, hashCode, toString
+// ** Custom methods (calculateEndTime, isInProgress, etc.)
+// ** Overriding auto-generated methods (toString)
+// ** Static factory methods
+// ** Date API (LocalDateTime)
+// ** String formatting
 
 // ============================================
 // COMPARISON: Record vs Regular Class

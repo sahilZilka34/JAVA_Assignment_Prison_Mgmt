@@ -6,8 +6,8 @@ import java.time.LocalDateTime;
  * Release - Implementation of sealed interface
  * 
  * Demonstrates:
- * ✅ final class implementing sealed interface
- * ✅ Business logic in event
+ * ** final class implementing sealed interface
+ * ** Business logic in event
  */
 public final record Release(
     LocalDateTime timestamp,

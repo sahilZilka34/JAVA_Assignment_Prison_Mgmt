@@ -7,12 +7,12 @@ import java.time.Period;
  * Person - Abstract base class 
  * 
  * Demonstrates:
- * ✅ Abstract class
- * ✅ Encapsulation (private fields)
- * ✅ this() - constructor chaining
- * ✅ this. - instance variable reference
- * ✅ Method overloading (multiple constructors + methods)
- * ✅ Date API (LocalDate, Period)
+ * ** Abstract class
+ * ** Encapsulation (private fields)
+ * ** this() - constructor chaining
+ * ** this. - instance variable reference
+ * ** Method overloading (multiple constructors + methods)
+ * ** Date API (LocalDate, Period)
  */
 
 public abstract class Person{
@@ -190,14 +190,14 @@ public abstract class Person{
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ Classes
-// ✅ this() - constructor chaining (line 62, 77)
-// ✅ this. - instance variable reference (line 54-56)
-// ✅ Method overloading (3 constructors + 3 calculateAge methods)
-// ✅ Encapsulation (private fields + public methods)
-// ✅ Abstract class (cannot instantiate directly)
-// ✅ Abstract methods (isValidId)
-// ✅ Date API (LocalDate, Period)
-// ✅ String usage (trim, toUpperCase, format)
-// ✅ Exception handling (IllegalArgumentException)
+// ** Classes
+// ** this() - constructor chaining (line 62, 77)
+// ** this. - instance variable reference (line 54-56)
+// ** Method overloading (3 constructors + 3 calculateAge methods)
+// ** Encapsulation (private fields + public methods)
+// ** Abstract class (cannot instantiate directly)
+// ** Abstract methods (isValidId)
+// ** Date API (LocalDate, Period)
+// ** String usage (trim, toUpperCase, format)
+// ** Exception handling (IllegalArgumentException)
 

@@ -146,7 +146,7 @@ public class PrisonMenu {
             Prisoner prisoner = new Prisoner(name, id, dob, sentence, crime);
             prison.addPrisoner(prisoner);
             
-            System.out.println("\n✅ SUCCESS!");
+            System.out.println("\n** SUCCESS!");
             System.out.println("Prisoner admitted: " + prisoner.getName());
             System.out.println("Assigned security level: " + prisoner.getSecurityLevel());
             System.out.println("\n*Java Features Demonstrated:");
@@ -205,7 +205,7 @@ public class PrisonMenu {
             // Simulate search that might throw exception
             Prisoner found = findPrisonerOrThrow(id);
             
-            System.out.println("\n✅ PRISONER FOUND:");
+            System.out.println("\n** PRISONER FOUND:");
             System.out.println(found.getFullDetails());
             System.out.println("Release date: " + found.calculateReleaseDate());
             
@@ -327,7 +327,7 @@ public class PrisonMenu {
         Cell cell = new Cell(cellNumber, type, level);
         prison.addCell(cell);
         
-        System.out.println("\n✅ Cell added: " + cell);
+        System.out.println("\n** Cell added: " + cell);
         System.out.println("\n*Java Features Demonstrated:");
         System.out.println("  - Enums (CellType, SecurityLevel)");
         System.out.println("  - Constructor with multiple parameters");
@@ -360,7 +360,7 @@ public class PrisonMenu {
             boolean assigned = cell.assignPrisoner(prisoner);
             
             if (assigned) {
-                System.out.println("\n✅ Assignment successful!");
+                System.out.println("\n** Assignment successful!");
             }
             
         } catch (PrisonerNotFoundException e) {
@@ -445,7 +445,7 @@ public class PrisonMenu {
             true  // approved
         );
         
-        System.out.println("\n✅ Visit recorded!");
+        System.out.println("\n** Visit recorded!");
         System.out.println(visit);
         System.out.println("\nVisit details:");
         System.out.println("  Visitor: " + visit.visitorName());
@@ -485,7 +485,7 @@ public class PrisonMenu {
             prisonerIds  // Array passed to varargs
         );
         
-        System.out.println("\n✅ Incident reported!");
+        System.out.println("\n** Incident reported!");
         System.out.println(incident.generateSummary());
         
         System.out.println("*Java Features Demonstrated:");

@@ -4,10 +4,10 @@ package enums;
  * SecurityLevel - Enum representing prisoner security classifications
  * 
  * Demonstrates:
- * ✅ Enum with constants
- * ✅ Enum with fields and constructor
- * ✅ Enum with methods
- * ✅ Business logic in enums
+ * ** Enum with constants
+ * ** Enum with fields and constructor
+ * ** Enum with methods
+ * ** Business logic in enums
  * 
  * Real-world usage: Different security levels require different:
  * - Number of guards
@@ -199,12 +199,12 @@ public enum SecurityLevel {
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ Enum with constants (LOW, MEDIUM, HIGH, MAXIMUM)
-// ✅ Enum with fields (requiredGuards, description, allowsVisitors)
-// ✅ Enum with constructor
-// ✅ Enum with instance methods (isHigherThan, getNextLevel, etc.)
-// ✅ Enum with static methods (fromString, recommendLevel)
-// ✅ ordinal() usage (getting enum position)
-// ✅ values() usage (getting all enum values)
-// ✅ Business logic in enums
-// ✅ String methods (toUpperCase, toLowerCase, contains)
+// ** Enum with constants (LOW, MEDIUM, HIGH, MAXIMUM)
+// ** Enum with fields (requiredGuards, description, allowsVisitors)
+// ** Enum with constructor
+// ** Enum with instance methods (isHigherThan, getNextLevel, etc.)
+// ** Enum with static methods (fromString, recommendLevel)
+// ** ordinal() usage (getting enum position)
+// ** values() usage (getting all enum values)
+// ** Business logic in enums
+// ** String methods (toUpperCase, toLowerCase, contains)

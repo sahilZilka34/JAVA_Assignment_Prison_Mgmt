@@ -8,11 +8,11 @@ import java.util.Objects;
  * PrisonerID - Custom Immutable Type
  * 
  * Demonstrates:
- * ✅ CUSTOM IMMUTABLE TYPE (advanced requirement)
- * ✅ All fields are final
- * ✅ No setters
- * ✅ Defensive copying where needed
- * ✅ Thread-safe by design
+ * ** CUSTOM IMMUTABLE TYPE (advanced requirement)
+ * ** All fields are final
+ * ** No setters
+ * ** Defensive copying where needed
+ * ** Thread-safe by design
  * 
  * What is an Immutable Type?
  * - Object whose state cannot be changed after creation
@@ -274,17 +274,17 @@ public final class PrisonerID {  // final class - cannot be extended
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ CUSTOM IMMUTABLE TYPE (advanced requirement!)
-// ✅ final class (cannot be extended)
-// ✅ All fields are private final (cannot be changed)
-// ✅ No setter methods
-// ✅ Getters return immutable types or primitives
-// ✅ Methods that "modify" return NEW objects
-// ✅ Proper equals() and hashCode()
-// ✅ Thread-safe by design
-// ✅ Static factory methods
-// ✅ Input validation
-// ✅ Date API (LocalDate, Year)
+// ** CUSTOM IMMUTABLE TYPE (advanced requirement!)
+// ** final class (cannot be extended)
+// ** All fields are private final (cannot be changed)
+// ** No setter methods
+// ** Getters return immutable types or primitives
+// ** Methods that "modify" return NEW objects
+// ** Proper equals() and hashCode()
+// ** Thread-safe by design
+// ** Static factory methods
+// ** Input validation
+// ** Date API (LocalDate, Year)
 
 // ============================================
 // WHY THIS IS IMMUTABLE:

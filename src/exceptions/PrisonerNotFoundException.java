@@ -4,9 +4,9 @@ package exceptions;
  * PrisonerNotFoundException - CHECKED EXCEPTION
  * 
  * Demonstrates:
- * ✅ Checked exception (extends Exception)
- * ✅ Custom exception with constructors
- * ✅ Exception with additional data
+ * ** Checked exception (extends Exception)
+ * ** Custom exception with constructors
+ * ** Exception with additional data
  * 
  * CHECKED vs UNCHECKED:
  * 
@@ -116,10 +116,10 @@ public class PrisonerNotFoundException extends Exception {
 // ============================================
 // ASSIGNMENT FEATURES DEMONSTRATED:
 // ============================================
-// ✅ CHECKED EXCEPTION (extends Exception)
-// ✅ Custom exception class
-// ✅ Multiple constructors (overloading)
-// ✅ super() to call parent constructor
-// ✅ Additional data field (prisonerId)
-// ✅ Overriding getMessage()
-// ✅ Exception chaining (cause parameter)
+// ** CHECKED EXCEPTION (extends Exception)
+// ** Custom exception class
+// ** Multiple constructors (overloading)
+// ** super() to call parent constructor
+// ** Additional data field (prisonerId)
+// ** Overriding getMessage()
+// ** Exception chaining (cause parameter)

@@ -13,6 +13,7 @@ import exceptions.PrisonerNotFoundException;
 import exceptions.CellCapacityException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import gatherer.GathererService;
 
 import java.util.Scanner;
 
@@ -113,6 +114,7 @@ public class PrisonMenu {
         System.out.println("15. Concurrency Demo (ExecutorService + Callable)");
         System.out.println("16. NIO2 File I/O Demo");
         System.out.println("17. Localisation Demo (English / Irish)");
+        System.out.println("18. Stream Gatherers Demo (Java 25 Bonus)");
         System.out.println("0.  Exit");
         System.out.println("-".repeat(60));
     }
@@ -142,6 +144,7 @@ public class PrisonMenu {
             case 16 -> runNio2Demo();
             case 17 -> runLocalisationDemo();
             case 0 -> exitSystem();
+            case 18 -> runGathererDemo();
             default -> System.out.println("❌ Invalid choice! Please try again.");
         }
         
@@ -569,6 +572,8 @@ public class PrisonMenu {
         System.out.println("  - StringBuilder");
     }
 
+    
+    
     // ============================================
     // USER STORY 13: STREAM ANALYTICS
     // ============================================
@@ -700,6 +705,20 @@ public class PrisonMenu {
         System.out.println("  - bundle.getString(key) (key-value lookup)");
         System.out.println("  - Runtime language switching without code changes");
         System.out.println("  - MissingResourceException handling (graceful fallback)");
+    }
+    
+    // ============================================
+    // USER STORY 18: STREAM GATHERERS (BONUS)
+    // ============================================
+    private void runGathererDemo() {
+        printHeader("USER STORY 18: STREAM GATHERERS - Java 25 Bonus");
+        GathererService gathererService = new GathererService(prison.getAllPrisoners());
+        gathererService.runAll();
+        System.out.println("\nJava Features Demonstrated:");
+        System.out.println("  - Gatherers.windowFixed(n)   (fixed-size batching)");
+        System.out.println("  - Gatherers.windowSliding(n) (overlapping windows)");
+        System.out.println("  - Gatherers.scan()           (running accumulation)");
+        System.out.println("  - stream.gather() as a custom intermediate operation");
     }
     
     // ============================================

@@ -29,24 +29,47 @@ public class Prisoner extends Person implements Assignable {
     // ============================================
     
     /**
-     * Full constructor (5 parameters)
-     */
-    public Prisoner(String name, String id, LocalDate dateOfBirth, 
-                   int sentenceYears, String crimeType) {
-        super(name, id, dateOfBirth);
-        
+ * Full constructor (5 parameters)
+ *
+ * Demonstrates JEP 513 — Flexible Constructor Bodies (Java 25 Preview)
+ *
+ * BEFORE Java 25: super() MUST be the first line — no exceptions.
+ * Any logic before super() was a compile error.
+ *
+ * AFTER Java 25 (JEP 513): Logic CAN run before super().
+ * You can validate, transform, or compute values first,
+ * then pass the cleaned result to the parent constructor.
+ *
+ * Real-world benefit: normalise/validate data before passing
+ * it up the chain, rather than doing it awkwardly after.
+ */
+public Prisoner(String name, String id, LocalDate dateOfBirth,
+               int sentenceYears, String crimeType) {
+
+    // ============================================
+    // JEP 513 — Code BEFORE super() (Java 25 only)
+    // ============================================
+    // Pre-process crimeType before passing to parent
+    // In Java 21 this would be a compile error
+    String normalisedCrime = (crimeType == null || crimeType.trim().isEmpty())
+        ? "Unknown"
+        : crimeType.trim();
+
+        // Validate sentence before calling super
         if (sentenceYears <= 0) {
             throw new IllegalArgumentException("Sentence must be positive");
         }
-        if (crimeType == null || crimeType.trim().isEmpty()) {
-            throw new IllegalArgumentException("Crime type cannot be empty");
-        }
-        
+
+        // NOW call super() — with clean, validated data
+        // Before JEP 513 this had to be line 1 with raw, unprocessed values
+        super(name, id, dateOfBirth);
+
+        // Post-super assignments (same as before)
         this.sentenceYears = sentenceYears;
-        this.crimeType = crimeType.trim();
+        this.crimeType = normalisedCrime;
         this.admissionDate = LocalDate.now();
-        this.securityLevel = SecurityLevel.recommendLevel(crimeType);
-    }
+        this.securityLevel = SecurityLevel.recommendLevel(normalisedCrime);
+    }   
     
     /**
      * Convenience constructor (4 parameters)

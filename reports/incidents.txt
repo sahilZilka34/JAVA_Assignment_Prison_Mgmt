@@ -1,0 +1,2 @@
+[2026-04-14 20:24:39] ID: INC-001 | Severity: MAXIMUM [Guards: 5, Visitors: Not Allowed] - Super-max - extremely dangerous inmates | Reporter: Officer Jones | Description: Cell block disturbance
+[2026-04-14 20:24:39] ID: INC-002 | Severity: LOW [Guards: 1, Visitors: Allowed] - Minimum security - trustworthy inmates | Reporter: Officer Smith | Description: Contraband found

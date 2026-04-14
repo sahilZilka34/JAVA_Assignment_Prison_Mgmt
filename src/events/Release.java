@@ -63,15 +63,5 @@ public final record Release(
                            timestamp, prisonerName, releaseType);
     }
 
-    @Override
-    public LocalDateTime getTimestamp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTimestamp'");
-    }
-
-    @Override
-    public String getPrisonerId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPrisonerId'");
-    }
+    
 }

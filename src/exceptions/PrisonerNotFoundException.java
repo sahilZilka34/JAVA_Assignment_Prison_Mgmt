@@ -77,7 +77,7 @@ public class PrisonerNotFoundException extends Exception {
      * 
      * @return The prisoner ID, or null if not set
      */
-    public String getPrisonerId() {
+    public String prisonerId() {
         return prisonerId;
     }
     

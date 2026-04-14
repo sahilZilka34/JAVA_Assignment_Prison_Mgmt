@@ -49,15 +49,5 @@ public final record Admission(
                            timestamp, prisonerName, cellNumber);
     }
 
-    @Override
-    public LocalDateTime getTimestamp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTimestamp'");
-    }
-
-    @Override
-    public String getPrisonerId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPrisonerId'");
-    }
+    
 }

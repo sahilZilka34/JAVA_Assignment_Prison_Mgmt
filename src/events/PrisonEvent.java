@@ -16,13 +16,13 @@ public sealed interface PrisonEvent permits Admission, Release, Transfer {
      * Get event timestamp
      * All events must have a timestamp
      */
-    LocalDateTime getTimestamp();
+    LocalDateTime timestamp();
     
     /**
      * Get prisoner ID involved in the event
      * All events involve a prisoner
      */
-    String getPrisonerId();
+    String prisonerId();
     
     /**
      * Get event type as string
@@ -38,13 +38,13 @@ public sealed interface PrisonEvent permits Admission, Release, Transfer {
      * Check if event is recent (within last 24 hours)
      */
     default boolean isRecent() {
-        return getTimestamp().isAfter(LocalDateTime.now().minusHours(24));
+        return timestamp().isAfter(LocalDateTime.now().minusHours(24));
     }
     
     /**
      * Get formatted timestamp
      */
     default String getFormattedTimestamp() {
-        return getTimestamp().toString();
+        return timestamp().toString();
     }
 }

@@ -1,0 +1,10 @@
+=== PRISONER REPORT ===
+Generated: 2026-04-14T20:24:39.384976700
+Total prisoners: 6
+
+P-2024-001      | John Doe             | Security: HIGH     | Sentence: 10 yrs
+P-2024-002      | Jane Smith           | Security: MAXIMUM  | Sentence: 25 yrs
+P-2024-003      | Bob Wilson           | Security: MEDIUM   | Sentence: 3 yrs
+P-2024-004      | Alice Brown          | Security: LOW      | Sentence: 15 yrs
+P-2024-005      | Carlos Diaz          | Security: HIGH     | Sentence: 8 yrs
+P-2024-006      | Emma White           | Security: MAXIMUM  | Sentence: 20 yrs

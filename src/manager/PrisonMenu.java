@@ -1,7 +1,8 @@
 package manager;
 
-import manager.Prison;
+
 import model.Prisoner;
+import nio2.ReportFileService;
 import model.Cell;
 import enums.SecurityLevel;
 import enums.CellType;
@@ -11,8 +12,12 @@ import exceptions.PrisonerNotFoundException;
 import exceptions.CellCapacityException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 import java.util.Scanner;
+
+import analytics.PrisonAnalyticsService;
+import concurrency.CellProcessingService;
+
 import java.util.List;
 
 /**
@@ -46,12 +51,22 @@ public class PrisonMenu {
             LocalDate.of(1985, 8, 20), 25, "Murder"));
         prison.addPrisoner(new Prisoner("Bob Wilson", "P-2024-003",
             LocalDate.of(1995, 3, 10), 3, "Theft"));
-        
+        // Add more varied sample data so analytics has something to work with
+        prison.addPrisoner(new Prisoner("Alice Brown",  "P-2024-004", LocalDate.of(1988, 1, 22), 15, "Fraud"));
+        prison.addPrisoner(new Prisoner("Carlos Diaz",  "P-2024-005", LocalDate.of(1992, 7, 4),  8,  "Assault"));
+        prison.addPrisoner(new Prisoner("Emma White",   "P-2024-006", LocalDate.of(1979, 11, 30), 20, "Murder"));
         // Add sample cells
         prison.addCell(new Cell("A-101", CellType.STANDARD, SecurityLevel.HIGH));
         prison.addCell(new Cell("A-102", CellType.STANDARD, SecurityLevel.HIGH));
         prison.addCell(new Cell("B-201", CellType.SHARED, SecurityLevel.LOW));
         prison.addCell(new Cell("C-301", CellType.SOLITARY, SecurityLevel.MAXIMUM));
+
+        prison.addPrisoner(new Prisoner("Bob Wilson", "P-2024-003",
+        LocalDate.of(1995, 3, 10), 3, "Theft"));
+        prison.addPrisoner(new Prisoner("Alice Brown", "P-2024-004",
+        LocalDate.of(1988, 1, 22), 15, "Fraud"));
+        prison.addPrisoner(new Prisoner("Emma White",  "P-2024-006",
+        LocalDate.of(1979, 11, 30), 20, "Murder"));
     }
     
     /**
@@ -92,6 +107,10 @@ public class PrisonMenu {
         System.out.println("10. Report Security Incident (Records)");
         System.out.println("11. View Sorted Prisoner List (Method References)");
         System.out.println("12. Generate Security Report (All Features)");
+        System.out.println("13. Run Prison Analytics (Streams Demo)");
+        System.out.println("14. Demonstrate Pattern Matching Switch (Sealed Events)");
+        System.out.println("15. Concurrency Demo (ExecutorService + Callable)");
+        System.out.println("16. NIO2 File I/O Demo");
         System.out.println("0.  Exit");
         System.out.println("-".repeat(60));
     }
@@ -115,6 +134,10 @@ public class PrisonMenu {
             case 10 -> reportIncident();
             case 11 -> viewSortedPrisoners();
             case 12 -> generateSecurityReport();
+            case 13 -> runAnalytics();
+            case 14 -> demonstratePatternMatching();
+            case 15 -> runConcurrencyDemo();
+            case 16 -> runNio2Demo();
             case 0 -> exitSystem();
             default -> System.out.println("❌ Invalid choice! Please try again.");
         }
@@ -212,7 +235,7 @@ public class PrisonMenu {
         } catch (PrisonerNotFoundException e) {
             System.out.println("\n❌ CHECKED EXCEPTION CAUGHT:");
             System.out.println("   " + e.getMessage());
-            System.out.println("   Prisoner ID: " + e.getPrisonerId());
+            System.out.println("   Prisoner ID: " + e.prisonerId());
         }
         
         System.out.println("\n*Java Features Demonstrated:");
@@ -364,7 +387,7 @@ public class PrisonMenu {
             }
             
         } catch (PrisonerNotFoundException e) {
-            System.out.println("❌ Prisoner not found: " + e.getPrisonerId());
+            System.out.println("❌ Prisoner not found: " + e.prisonerId());
         } catch (CellCapacityException e) {
             System.out.println("\n❌ UNCHECKED EXCEPTION CAUGHT:");
             System.out.println("   " + e.getMessage());
@@ -542,6 +565,126 @@ public class PrisonMenu {
         System.out.println("  - Stream operations");
         System.out.println("  - StringBuilder");
     }
+
+    // ============================================
+    // USER STORY 13: STREAM ANALYTICS
+    // ============================================
+    
+    private void runAnalytics() {
+        printHeader("USER STORY 13: STREAM ANALYTICS");
+        PrisonAnalyticsService analytics = new PrisonAnalyticsService(prison.getAllPrisoners());
+        analytics.runAllAnalytics();
+        System.out.println("\nJava Features Demonstrated:");
+        System.out.println("  - Stream terminal ops: count, min, max, findFirst, findAny");
+        System.out.println("  - Stream terminal ops: allMatch, anyMatch, noneMatch, forEach");
+        System.out.println("  - Collectors: groupingBy, partitioningBy, toMap");
+        System.out.println("  - Intermediate ops: filter, map, distinct, sorted, limit");
+        System.out.println("  - Consumer, Function, Supplier, Predicate (all 4 lambda types)");
+    }
+    
+
+    // ============================================
+    // USER STORY 14: PATTERN MATCHING SWITCH
+    // ============================================
+
+    private void demonstratePatternMatching() {
+    printHeader("USER STORY 14: PATTERN MATCHING SWITCH");
+
+    // Create one of each sealed event type
+    List<events.PrisonEvent> events = List.of(
+        new events.Admission(
+            java.time.LocalDateTime.now(),
+            "P-2024-001", "John Doe", "A-101", "New intake"),
+        new events.Release(
+            java.time.LocalDateTime.now(),
+            "P-2024-003", "Bob Wilson", "SENTENCE_COMPLETE", "Home"),
+        new events.Transfer(
+            java.time.LocalDateTime.now(),
+            "P-2024-002", "Jane Smith", "A-101", "C-301", "Security upgrade")
+    );
+
+    System.out.println("Processing " + events.size() + " prison events:\n");
+
+    for (events.PrisonEvent event : events) {
+
+        // PATTERN MATCHING SWITCH — the key OOP2 feature
+        // Each case binds the event to a typed variable (a, r, t)
+        // giving you direct access to that record's specific fields
+        String description = switch (event) {
+            case events.Admission a ->
+                "ADMISSION  | Prisoner: " + a.prisonerName()
+                + " -> Cell: " + a.cellNumber()
+                + " | Reason: " + a.reason();
+            case events.Release r ->
+                "RELEASE    | Prisoner: " + r.prisonerName()
+                + " | Type: " + r.releaseType()
+                + " | Destination: " + r.destination();
+            case events.Transfer t ->
+                "TRANSFER   | Prisoner: " + t.prisonerName()
+                + " | " + t.fromCell() + " -> " + t.toCell()
+                + " | Reason: " + t.reason();
+        };
+
+        System.out.println(description);
+        System.out.println("  Timestamp : " + event.timestamp());
+        System.out.println("  Prisoner ID: " + event.prisonerId());
+        System.out.println("  Recent?    : " + event.isRecent());
+        System.out.println();
+    }
+
+        System.out.println("Java Features Demonstrated:");
+        System.out.println("  - Sealed interface (PrisonEvent permits 3 types)");
+        System.out.println("  - Pattern matching switch (case Admission a ->)");
+        System.out.println("  - Switch is exhaustive — no default needed");
+        System.out.println("  - Each case variable gives typed field access");
+        System.out.println("  - Records as sealed implementations");
+    }
+
+    // ============================================
+    // USER STORY 15: CONCURRENCY
+    // ============================================
+    private void runConcurrencyDemo() {
+        printHeader("USER STORY 15: CONCURRENCY - ExecutorService + Callable");
+        try {
+            CellProcessingService service = new CellProcessingService(
+                prison.getAllCells(),
+                prison.getAllPrisoners()
+            );
+            service.runAll();
+        } catch (InterruptedException e) {
+            System.out.println("Concurrency demo interrupted: " + e.getMessage());
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("\nJava Features Demonstrated:");
+        System.out.println("  - ExecutorService (thread pool management)");
+        System.out.println("  - Callable<T> (task that returns a value)");
+        System.out.println("  - Future<T> (receipt for an async result)");
+        System.out.println("  - invokeAll() (submit all tasks at once)");
+        System.out.println("  - executor.shutdown() (clean thread pool teardown)");
+        System.out.println("  - Stream + lambda to build task list");
+    }
+    
+    // ============================================
+    // USER STORY 16: NIO2
+    // ============================================
+    private void runNio2Demo() {
+        printHeader("USER STORY 16: NIO2 FILE I/O");
+        try {
+            ReportFileService fileService = new ReportFileService();
+            fileService.runAll(prison.getAllPrisoners());
+        } catch (java.io.IOException e) {
+            System.out.println("File operation failed: " + e.getMessage());
+        }
+        System.out.println("\nJava Features Demonstrated:");
+        System.out.println("  - Path and Paths.get() (file addressing)");
+        System.out.println("  - Files.createDirectories() (create folders)");
+        System.out.println("  - Files.writeString() with CREATE + APPEND");
+        System.out.println("  - Files.writeString() with TRUNCATE_EXISTING");
+        System.out.println("  - Files.readString() (read entire file)");
+        System.out.println("  - Files.exists(), size(), getLastModifiedTime()");
+    }
+        
+    
     
     // ============================================
     // HELPER METHODS

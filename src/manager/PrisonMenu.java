@@ -7,6 +7,7 @@ import model.Cell;
 import enums.SecurityLevel;
 import enums.CellType;
 import records.VisitRecord;
+import localisation.LocaleManager;
 import records.IncidentReport;
 import exceptions.PrisonerNotFoundException;
 import exceptions.CellCapacityException;
@@ -111,6 +112,7 @@ public class PrisonMenu {
         System.out.println("14. Demonstrate Pattern Matching Switch (Sealed Events)");
         System.out.println("15. Concurrency Demo (ExecutorService + Callable)");
         System.out.println("16. NIO2 File I/O Demo");
+        System.out.println("17. Localisation Demo (English / Irish)");
         System.out.println("0.  Exit");
         System.out.println("-".repeat(60));
     }
@@ -138,6 +140,7 @@ public class PrisonMenu {
             case 14 -> demonstratePatternMatching();
             case 15 -> runConcurrencyDemo();
             case 16 -> runNio2Demo();
+            case 17 -> runLocalisationDemo();
             case 0 -> exitSystem();
             default -> System.out.println("❌ Invalid choice! Please try again.");
         }
@@ -684,7 +687,20 @@ public class PrisonMenu {
         System.out.println("  - Files.exists(), size(), getLastModifiedTime()");
     }
         
-    
+    // ============================================
+// USER STORY 17: LOCALISATION
+    // ============================================
+    private void runLocalisationDemo() {
+        printHeader("USER STORY 17: LOCALISATION - ResourceBundle");
+        LocaleManager localeManager = new LocaleManager();
+        localeManager.runDemo();
+        System.out.println("Java Features Demonstrated:");
+        System.out.println("  - ResourceBundle.getBundle() (loads .properties file)");
+        System.out.println("  - Locale.ENGLISH and new Locale(\"ga\") for Irish");
+        System.out.println("  - bundle.getString(key) (key-value lookup)");
+        System.out.println("  - Runtime language switching without code changes");
+        System.out.println("  - MissingResourceException handling (graceful fallback)");
+    }
     
     // ============================================
     // HELPER METHODS
